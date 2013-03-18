@@ -51,9 +51,24 @@ namespace Lists
 				              index, _backingStore.Length));
 			
 			//interesting problem here: how do we want to remove an item?
-			//do we want to reclaim the space of the item deleted?
-			//
-			Array.Clear(_backingStore, index, 1);
+			//do we want to reclaim the space of the item deleted and move the items above it down?
+			
+			T[] newArray = new T[_backingStore.Length - 1]();
+			int arrayIndex = 0;
+			int newArrayIndex = 0;
+			
+			while(arrayIndex < _backingStore.Length)
+			{
+				if(arrayIndex != index)
+				{
+					newArray[newArrayIndex] = _backingStore[arrayIndex];
+					newArrayIndex++;
+				}
+				
+				arrayIndex++;
+			}
+			
+			_backingStore = newArray;
 		}
 		
 		public T ItemAtIndex(int index)
