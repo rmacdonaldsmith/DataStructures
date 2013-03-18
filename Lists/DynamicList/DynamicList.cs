@@ -7,7 +7,6 @@ namespace Lists
 	{
 		private readonly int _defaultSize = 10;
 		private T[] _backingStore;
-		private int _indexOfTopElement = 0;
 		private int _count;
 		
 		public int Count
@@ -31,16 +30,13 @@ namespace Lists
 			
 			_backingStore = (T[])source;
 			_count = _backingStore.Length;
-			_indexOfTopElement = _count - 1;
-			//we will want to increase the size of the backing store - doulbe it in size
+			//we will want to increase the size of the backing store - double it in size
 		}
 		
 		public void Add(T item)
 		{
 			CheckAndResizeArray(1);
-			_backingStore[_indexOfTopElement++] = item;
-			_count++;
-			_indexOfTopElement = _count - 1;
+			_backingStore[_count++] = item;
 		}
 		
 		public void Delete(int index)
@@ -69,6 +65,7 @@ namespace Lists
 			}
 			
 			_backingStore = newArray;
+		    _count = _backingStore.Length;
 		}
 		
 		public T ItemAtIndex(int index)
@@ -80,8 +77,30 @@ namespace Lists
 			
 			return _backingStore[index];
 		}
-		
-		private void CheckAndResizeArray(int numberOfItemsToAdd)
+
+	    public T Find(T itemToFind)
+	    {
+	        //assumes unsorted items in the list, which means we must iterate every item to find
+            //what we are looking for.
+            //if it were a sorted list: we can employ a binary search and get much better search times
+            //also want to introduce an IComparable to let the user specify a comparer rather than use the default.
+	        for (int index = 0; index < _backingStore.Length; index++)
+	        {
+	            T item = _backingStore[index];
+	            if (item.Equals(itemToFind))
+	                return item;
+	        }
+
+	        return default(T);
+	    }
+
+	    public void Clear()
+	    {
+            Array.Clear(_backingStore, 0, _count);
+	        _count = 0;
+	    }
+
+	    private void CheckAndResizeArray(int numberOfItemsToAdd)
 		{
 			if(_count + numberOfItemsToAdd >= _backingStore.Length)
 			{
