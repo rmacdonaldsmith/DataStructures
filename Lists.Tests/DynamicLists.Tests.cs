@@ -43,9 +43,9 @@ namespace Lists.Tests
 		public void DeleteTests()
 		{
 			var list = new DynamicList<int>(new []{1,2,3,4,5,6});
-			Assert.AreEqual(6, list.Count());
+			Assert.AreEqual(6, list.Count);
 			list.Delete(0);
-			Assert.AreEqual(5, list.Count());
+			Assert.AreEqual(5, list.Count);
 		}
 	}
 }
