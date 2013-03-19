@@ -93,7 +93,7 @@ namespace Lists
 
 	        return default(T);
 	    }
-
+		
 	    public void Clear()
 	    {
             Array.Clear(_backingStore, 0, _count);
