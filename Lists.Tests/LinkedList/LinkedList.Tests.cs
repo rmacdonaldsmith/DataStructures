@@ -8,7 +8,7 @@ namespace Lists.Tests
 		public void ConstructorTests()
 		{
 			Assert.IsNotNull(new LinkedList<string>());
-			Assert.IsNotNull(new LinkedList<string>("robert"));
+			
 			
 		}
 	}

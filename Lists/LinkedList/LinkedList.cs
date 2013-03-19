@@ -4,11 +4,23 @@ namespace Lists
 {
 	public class LinkedList<T>
 	{
-		private ListNode<T>[] _nodes;
+		private ListNode<T> _head;
+		private LinkedList<T> _tail;
 		
-		public LinkedList ()
+		public ListNode<T> Head
 		{
-			_nodes = new ListNode<T>[10];
+			get { return _head; }
+		}
+		
+		public LinkedList<T> Tail
+		{
+			get { return _tail; }
+		}
+		
+		public void Add(T item)
+		{
+			var node = new ListNode<T>(_tail.Head, _head, item);
+			_head = node;
 		}
 		
 		
