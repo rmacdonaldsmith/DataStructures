@@ -58,6 +58,8 @@
     <Compile Include="DynamicList\DynamicList.cs" />
     <Compile Include="LinkedList\LinkedList.cs" />
     <Compile Include="LinkedList\ListNode.cs" />
+    <Compile Include="BinarySearchTree\TreeNode.cs" />
+    <Compile Include="BinarySearchTree\BinarySearchTree.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -79,5 +81,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="LinkedList\" />
+    <Folder Include="BinarySearchTree\" />
   </ItemGroup>
 </Project>
