@@ -29,9 +29,7 @@ namespace Lists
 		
 		public void Insert(T value)
 		{
-			if(_head == null)
-				//we are inserting the first node in to the tree
-				InsertInternal(_head, value);
+			InsertInternal(_head, value);
 		}
 		
 		public void InsertInternal(TreeNode<T> tree, T value)

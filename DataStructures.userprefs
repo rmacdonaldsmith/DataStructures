@@ -1,21 +1,22 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Lists/LinkedList/LinkedList.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Lists.Tests/BinarySearchTree/BinarySearchTreeTests.cs">
     <Files>
       <File FileName="Lists/DynamicList/DynamicList.cs" Line="95" Column="7" />
-      <File FileName="Lists/LinkedList/LinkedList.cs" Line="26" Column="3" />
-      <File FileName="Lists.Tests/LinkedList/LinkedList.Tests.cs" Line="11" Column="4" />
+      <File FileName="Lists/LinkedList/LinkedList.cs" Line="46" Column="34" />
       <File FileName="Lists.Tests/DynamicLists.Tests.cs" Line="1" Column="1" />
+      <File FileName="Lists/BinarySearchTree/TreeNode.cs" Line="5" Column="26" />
+      <File FileName="Lists/BinarySearchTree/BinarySearchTree.cs" Line="39" Column="20" />
+      <File FileName="Lists.Tests/BinarySearchTree/BinarySearchTreeTests.cs" Line="10" Column="9" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State expanded="True">
           <Node name="Lists" expanded="True">
-            <Node name="LinkedList" expanded="True">
-              <Node name="LinkedList.cs" selected="True" />
-            </Node>
+            <Node name="BinarySearchTree" expanded="True" />
           </Node>
-          <Node name="Lists.Tests" expanded="True">
+          <Node name="Lists.Tests" expanded="True" selected="True">
+            <Node name="BinarySearchTree" expanded="True" />
             <Node name="LinkedList" expanded="True" />
           </Node>
         </State>
@@ -32,7 +33,9 @@
     </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="/home/robert/Programming/DataStructures/Lists.Tests/BinarySearchTree/BinarySearchTreeTests.cs" line="13" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>
