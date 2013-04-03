@@ -1,4 +1,5 @@
 using System;
+using Lists.BinarySearchTree;
 using NUnit.Framework;
 using Lists;
 

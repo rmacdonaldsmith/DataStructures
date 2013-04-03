@@ -1,6 +1,7 @@
 using System;
+using System.Collections.Generic;
 
-namespace Lists
+namespace Lists.BinarySearchTree
 {
 	public class BinarySearchTree<T> where T : IComparable
 	{
@@ -26,8 +27,36 @@ namespace Lists
 		{
 			_head = head;
 		}
-		
-		public void Insert(T value)
+
+	    public BinarySearchTree(IEnumerable<T> source)
+	    {
+	        foreach (var value in source)
+	        {
+	            Insert(value);
+	        }
+	    }
+
+	    public TreeNode<T> Find(T value)
+	    {
+	        return FindRecursive(value, _head);
+	    }
+
+	    private TreeNode<T> FindRecursive(T value, TreeNode<T> node)
+	    {
+	        if (node == null)
+	            return null;
+
+	        var comparison = value.CompareTo(node.Value);
+            if (comparison == 0)
+                return node;
+
+	        if (comparison < 0)
+	            return FindRecursive(value, node.Left);
+	        else
+	            return FindRecursive(value, node.Right);
+	    }
+
+	    public void Insert(T value)
 		{
             if (_head == null)
             {

@@ -38,6 +38,7 @@
   <ItemGroup />
   <ItemGroup>
     <Compile Include="BinarySearchTree\BinarySearchTreeTests.cs" />
+    <Compile Include="BinarySearchTree\when_searching_a_btree.cs" />
     <Compile Include="LinkedList\LinkedListTests.cs" />
     <Compile Include="DynamicList\DynamicLists.Tests.cs" />
   </ItemGroup>
