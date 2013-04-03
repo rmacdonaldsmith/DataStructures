@@ -10,20 +10,27 @@ namespace Lists
 		
 		public TreeNode<T> Left
 		{
-			get { return _left; }
+		    get { return _left; }
+		    set { _left = value; }
 		}
-		
-		public TreeNode<T> Right
+
+	    public TreeNode<T> Right
 		{
 			get {return _right; }
+            set { _right = value; }
 		}
 		
 		public T Value
 		{
 			get { return _value; }
 		}
-		
-		public TreeNode (TreeNode<T> left, TreeNode<T> right, T value)
+
+	    public TreeNode(T value)
+	    {
+	        _value = value;
+	    }
+
+	    public TreeNode (TreeNode<T> left, TreeNode<T> right, T value)
 		{
 			_left = left;
 			_right = right;
