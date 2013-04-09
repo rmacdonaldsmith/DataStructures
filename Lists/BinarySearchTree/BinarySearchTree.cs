@@ -56,6 +56,35 @@ namespace Lists.BinarySearchTree
 	            return FindRecursive(value, node.Right);
 	    }
 
+	    public TreeNode<T> FindNearestNode(T value)
+	    {
+	        return FindNearestNodeInternal(value, _head);
+	    }
+
+	    private TreeNode<T> FindNearestNodeInternal(T value, TreeNode<T> node)
+	    {
+            //do we go left of right from here?
+	        var comparison = value.CompareTo(node.Value);
+
+            if (comparison > 0) //RIGHT
+            {
+                //is the search value greater than the Right value?
+                if (value.CompareTo(node.Right.Value) > 0)
+                {
+                    //recurse
+                    return FindNearestNodeInternal(value, node.Right);
+                }
+
+                //which is closest to the value: this node or this node.right?
+                var distance = node.Right.Value - node.Value;
+            }
+            else        //LEFT
+            {
+                
+            }
+
+	    }
+
 	    public void Insert(T value)
 		{
             if (_head == null)
@@ -98,6 +127,11 @@ namespace Lists.BinarySearchTree
                 //Insert somewhere in the Right side of the tree
                 InsertInternal(value, parent.Right);
 	        }
+	    }
+
+	    public void Delete(T Value)
+	    {
+
 	    }
 	}
 }
