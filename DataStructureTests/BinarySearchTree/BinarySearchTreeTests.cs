@@ -11,7 +11,7 @@ namespace DataStructureTests.BinarySearchTreeTests
 		[Test]
 		public void InsertTest ()
 		{
-			var tree = new BinarySearchTree<int>();
+			var tree = new BinarySearchTree<int>(null);
 			tree.Insert(10);
 			Assert.AreEqual(1, tree.Height);
 			Assert.IsNotNull(tree.Head);

@@ -7,6 +7,7 @@ namespace Lists.BinarySearchTree
 	{
 		private TreeNode<T> _head;
 		private int _height;
+	    private readonly Func<T, T, int> _distanceDelegate;
 		
 		public TreeNode<T> Head
 		{
@@ -18,18 +19,21 @@ namespace Lists.BinarySearchTree
 			get { return _height; }
 		}
 		
-		public BinarySearchTree ()
+		public BinarySearchTree (Func<T, T, int> distanceDelegate)
 		{
-			//empty
-		}
-		
-		public BinarySearchTree(TreeNode<T> head)
-		{
-			_head = head;
+		    _distanceDelegate = distanceDelegate;
+		    //empty
 		}
 
-	    public BinarySearchTree(IEnumerable<T> source)
+	    public BinarySearchTree(TreeNode<T> head, Func<T, T, int> distanceDelegate)
 	    {
+	        _head = head;
+	        _distanceDelegate = distanceDelegate;
+	    }
+
+	    public BinarySearchTree(IEnumerable<T> source, Func<T, T, int> distanceDelegate)
+	    {
+	        _distanceDelegate = distanceDelegate;
 	        foreach (var value in source)
 	        {
 	            Insert(value);
@@ -75,14 +79,29 @@ namespace Lists.BinarySearchTree
                     return FindNearestNodeInternal(value, node.Right);
                 }
 
-                //which is closest to the value: this node or this node.right?
-                var distance = node.Right.Value - node.Value;
-            }
-            else        //LEFT
-            {
-                
+                //else the search value is in between the current node and the right node
+                //which is closest to the value: this node or node.right?
+                return Nearest(node, node.Right, value);
             }
 
+            //else LEFT
+	        //is the search value less than the Left value?
+	        if (value.CompareTo(node.Left.Value) < 0)
+	            return FindNearestNodeInternal(value, node.Left); //he value is somewhere left of here, recurse
+
+	        //else the search value lies between the current node and the left node
+	        return Nearest(node, node.Left, value);
+	    }
+
+	    private TreeNode<T> Nearest(TreeNode<T> n1, TreeNode<T> n2, T value)
+	    {
+	        var distance1 = Math.Abs(_distanceDelegate(n1.Value, value));
+	        var distance2 = Math.Abs(_distanceDelegate(n2.Value, value));
+
+	        if (distance1 == distance2)
+                return n1; // default behaviour if both nodes are equidistant from the value.
+
+	        return distance1 < distance2 ? n1 : n2;
 	    }
 
 	    public void Insert(T value)
