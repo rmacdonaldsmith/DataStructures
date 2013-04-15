@@ -11,7 +11,7 @@ namespace DataStructureTests.BinarySearchTree
         [SetUp]
         public void given_a_btree_with_data()
         {
-            _tree = new BinarySearchTree<int>(new []{12,43,6,7,34,24,16,456,1,4,9}, null);
+            _tree = new BinarySearchTree<int>(new []{12,43,6,7,34,24,16,456,1,4,9});
         }
 
         [Test]

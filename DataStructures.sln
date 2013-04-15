@@ -1,6 +1,6 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lists", "Lists\Lists.csproj", "{0A62A8F5-7FDB-4EAF-92DC-3A4D2DE9C1DB}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataStructureTests", "DataStructureTests\DataStructureTests.csproj", "{B5A33909-98A8-466D-8F41-0773AFBA5501}"
@@ -15,7 +15,6 @@ Global
 		{0A62A8F5-7FDB-4EAF-92DC-3A4D2DE9C1DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{0A62A8F5-7FDB-4EAF-92DC-3A4D2DE9C1DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0A62A8F5-7FDB-4EAF-92DC-3A4D2DE9C1DB}.Default|Any CPU.ActiveCfg = Debug|Any CPU
-		{0A62A8F5-7FDB-4EAF-92DC-3A4D2DE9C1DB}.Default|Any CPU.Build.0 = Debug|Any CPU
 		{0A62A8F5-7FDB-4EAF-92DC-3A4D2DE9C1DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0A62A8F5-7FDB-4EAF-92DC-3A4D2DE9C1DB}.Release|Any CPU.Build.0 = Release|Any CPU
 		{B5A33909-98A8-466D-8F41-0773AFBA5501}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
