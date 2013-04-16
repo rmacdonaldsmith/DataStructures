@@ -38,6 +38,7 @@
   <ItemGroup />
   <ItemGroup>
     <Compile Include="BinarySearchTree\BinarySearchTreeTests.cs" />
+    <Compile Include="BinarySearchTree\when_deleting_a_node.cs" />
     <Compile Include="BinarySearchTree\when_finding_nearest_value.cs" />
     <Compile Include="BinarySearchTree\when_searching_a_btree.cs" />
     <Compile Include="LinkedList\LinkedListTests.cs" />
